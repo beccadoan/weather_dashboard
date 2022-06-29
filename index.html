@@ -4,12 +4,80 @@
     <meta charset="UTF-8">
     <meta http-eqsection="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Start Page</title>
 </head>
 
 <body>
-hey there
+  <nav>Weather Dashboard</nav>
+  <main>
+    <div class="d-flex flex-row flex-wrap">
+      <div class="city-history col-12 col-md-3">
+        <div class="search-bar">
+          <form class="form-group">
+            <label for="city" class="search-label">Search for a City: </label>
+            <input type="text" name="city" placeholder="city" class="form-control city-input">
+            <button class="btn btn-primary search-btn" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="search-history">
+          <ul>
+            <li class="history">City 1</li>
+            <li class="history">City 1</li>
+            <li class="history">City 1</li>
+            <li class="history">City 1</li>
+            <li class="history">City 1</li>
+          </ul>
+        </div>
+      </div>
+      <div class="city-weather col-12 col-md-9">
+        <div class="todays-forecast">
+          <h1 id="name-date">City Name</h1>
+          <p>Temperature: </p><span id="temp"></span>
+          <p>Wind: </p><span id="wind"></span>
+          <p>Humidity: </p><span id="humidity"></span>
+          <p>UV: </p><span id="UV"></span>
+        </div>
+        <div class="five-day">
+          <h1>5 Day Forecast</h1>
+          <div class="d-flex flex-row flex-wrap day-container">
+            <div class="one-day-forecast">
+              <h4>6/29/2022</h4>
+              <p>Icon </p>
+              <p>Temperature: </p><span></span>
+              <p>Wind: </p><span></span>
+              <p>Humidity: </p><span></span>
+            </div>
+            <div class="one-day-forecast">
+              <h4>6/30/2022</h4>
+              <p>Temperature: </p><span></span>
+              <p>Wind: </p><span></span>
+              <p>Humidity: </p><span></span>
+            </div>
+            <div class="one-day-forecast">
+              <h4>6/31/2022</h4>
+              <p>Temperature: </p><span></span>
+              <p>Wind: </p><span></span>
+              <p>Humidity: </p><span></span>
+            </div>
+            <div class="one-day-forecast">
+              <h4>7/1/2022</h4>
+              <p>Temperature: </p><span></span>
+              <p>Wind: </p><span></span>
+              <p>Humidity: </p><span></span>
+            </div>
+            <div class="one-day-forecast">
+              <h4>7/2/2022</h4>
+              <p>Temperature: </p><span></span>
+              <p>Wind: </p><span></span>
+              <p>Humidity: </p><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>

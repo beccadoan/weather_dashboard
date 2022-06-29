@@ -1,3 +1,79 @@
-body {
-    background-color: aquamarine;
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .search-bar {
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+  }
+
+  .city-weather {
+    padding: 10px;
+  }
+  
+  .city-history {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+nav {
+    background: linear-gradient(to right, #3B6EC4, #230555);
+    color: white;
+    text-align: center;
+    font-size: 35px;
+    padding: 10px;
 }
+
+.one-day-forecast {
+    background: #33475A;
+    width: 19%;
+    color: white;
+    padding: 3px;
+    margin-bottom: 5px;
+}
+
+.one-day-forecast h4 {
+    font-size: 20px;
+}
+
+.search-btn {
+    width: 100%;
+}
+
+.search-label {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.city-input {
+    margin-bottom: 5px;
+}
+
+.history {
+    text-align: center;
+    background-color: grey;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.todays-forecast {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.day-container {
+    justify-content: space-between;
+}
+
+/* medium screens */
+@media only screen and (max-width: 750px) {
+    .one-day-forecast {
+        width: 80%;
+    }
+
+    .day-container {
+        justify-content: center;
+    }
+  }
