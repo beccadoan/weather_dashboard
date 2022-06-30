@@ -67,6 +67,10 @@ nav {
     justify-content: space-between;
 }
 
+.w-icon {
+    height: 70px;
+}
+
 /* medium screens */
 @media only screen and (max-width: 750px) {
     .one-day-forecast {

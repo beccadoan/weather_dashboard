@@ -33,51 +33,30 @@
       </div>
       <div class="city-weather col-12 col-md-9">
         <div class="todays-forecast">
-          <h1 id="name-date">City Name</h1>
-          <p>Temperature: </p><span id="temp"></span>
-          <p>Wind: </p><span id="wind"></span>
-          <p>Humidity: </p><span id="humidity"></span>
-          <p>UV: </p><span id="UV"></span>
+          <h1 id="name-date">City Name <span id=""><img src="http://openweathermap.org/img/wn/10d@2x.png" alt=""></span></h1>
+          <p>Temp: <span id="temp"></span>&deg;F</p>
+          <p>Wind: <span id="wind"></span>MPH</p>
+          <p>Humidity: <span id="humidity"></span>%</p>
+          <p>UV Index: <span id="UV"></span></p>
         </div>
         <div class="five-day">
           <h1>5 Day Forecast</h1>
           <div class="d-flex flex-row flex-wrap day-container">
-            <div class="one-day-forecast">
+            <!-- <div class="one-day-forecast">
               <h4>6/29/2022</h4>
-              <p>Icon </p>
+              <img src="" id="icon-today">
               <p>Temperature: </p><span></span>
               <p>Wind: </p><span></span>
               <p>Humidity: </p><span></span>
-            </div>
-            <div class="one-day-forecast">
-              <h4>6/30/2022</h4>
-              <p>Temperature: </p><span></span>
-              <p>Wind: </p><span></span>
-              <p>Humidity: </p><span></span>
-            </div>
-            <div class="one-day-forecast">
-              <h4>6/31/2022</h4>
-              <p>Temperature: </p><span></span>
-              <p>Wind: </p><span></span>
-              <p>Humidity: </p><span></span>
-            </div>
-            <div class="one-day-forecast">
-              <h4>7/1/2022</h4>
-              <p>Temperature: </p><span></span>
-              <p>Wind: </p><span></span>
-              <p>Humidity: </p><span></span>
-            </div>
-            <div class="one-day-forecast">
-              <h4>7/2/2022</h4>
-              <p>Temperature: </p><span></span>
-              <p>Wind: </p><span></span>
-              <p>Humidity: </p><span></span>
-            </div>
+            </div> -->
+            
           </div>
         </div>
       </div>
     </div>
   </main>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>
