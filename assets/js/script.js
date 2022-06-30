@@ -54,7 +54,7 @@ var loadCities = function() {
 
 // get latitude and longitude of any city in the US
 var getLatLong = function(city){
-    var url = 'http://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=5&appid=' + apiKey
+    var url = 'https://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=5&appid=' + apiKey
 
     fetch(url)
         .then(response => {
@@ -80,7 +80,7 @@ var getLatLong = function(city){
 
 // gets weather data for a city given it's latitude and longitude
 var getCityData = function(lat, lon) {
-    var url = 'http://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&units=imperial&appid=' + apiKey;
+    var url = 'https://api.openweathermap.org/data/2.5/onecall?lat='+lat+'&lon='+lon+'&units=imperial&appid=' + apiKey;
 
     fetch(url)
         .then(response => {
