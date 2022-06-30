@@ -71,6 +71,10 @@ nav {
     height: 70px;
 }
 
+.icon-today {
+    height: 35px;
+}
+
 /* medium screens */
 @media only screen and (max-width: 750px) {
     .one-day-forecast {
