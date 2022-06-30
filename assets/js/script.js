@@ -1,5 +1,6 @@
 // grabs coordinates of city
 var apiKey = 'c815eea855df2241ab24e06d69f9fa74';
+searchHistory = {}; // set global variable
 
 var currentWeatherIcon = document.querySelector('#icon-today');
 var cityNameEl = document.querySelector("#name-date");
@@ -9,9 +10,35 @@ var currentWindEl = document.querySelector("#wind");
 var currentUVEl = document.querySelector("#UV");
 var fiveDayEl = document.querySelector(".day-container");
 var formEl = document.querySelector("#submit-city");
-var citySearchEl = document.querySelector("#city-search")
-// cityNameEl.textContent += moment().add(2, 'days').format("L")
-// cityNameEl.textContent = "fu"
+var citySearchEl = document.querySelector("#city-search");
+var cityHistoryEl = document.querySelector("#city-history");
+
+var updateCities = function(cities){
+    cityHistoryEl.textContent = "";
+ for (var i=0; i < cities.length; i++){
+    var cityEl = document.createElement('li');
+    cityEl.textContent = cities[i];
+    cityEl.classList.add("history");
+    cityHistoryEl.append(cityEl);
+ }
+}
+
+var loadCities = function() {
+    searchHistory = JSON.parse(localStorage.getItem("city-search-history"));
+  
+    // if nothing in localStorage, create a new object to track all task status arrays
+    if (!searchHistory) {
+      searchHistory = {
+        cities: []
+      } } else {
+        updateCities(searchHistory.cities)
+      }
+  };
+  
+  var saveCities = function() {
+    localStorage.setItem("city-search-history", JSON.stringify(searchHistory));
+  };
+
 
 var getLatLong = function(city){
     var url = 'http://api.openweathermap.org/geo/1.0/direct?q='+city+'&limit=5&appid=' + apiKey
@@ -27,6 +54,10 @@ var getLatLong = function(city){
             var lon = data[0].lon.toString();
             var name = data[0].name;
             cityNameEl.innerHTML = name + " (" + moment().format("L") + ") <span><img id='c-icon' class='w-icon'></span>";
+            searchHistory.cities.unshift(name)
+            console.log(searchHistory);
+            saveCities();
+            updateCities(searchHistory.cities)
             getCityData(lat,lon);
         })
     }
@@ -61,7 +92,6 @@ var populateFutureData = function(weather) {
     var dailyArray = weather.slice(1,6);
     fiveDayEl.innerHTML = ""
     for (var i = 0; i < 5; i++){
-        // console.log(dailyArray[i]);
         var dailyForecastDiv = document.createElement('div');
         dailyForecastDiv.classList.add("one-day-forecast");
         var dateEl = document.createElement('h4');
@@ -72,7 +102,6 @@ var populateFutureData = function(weather) {
         iconEl.classList.add("icon-today")
         iconEl.setAttribute('src', source);
         var tempEl = document.createElement('p');
-        console.log(dailyArray[i]);
         tempEl.innerHTML = "Temp: " + dailyArray[i].temp.day + "&deg;F";
         var windEl = document.createElement('p');
         windEl.textContent = "Wind: " + dailyArray[i].wind_speed + "MPH";
@@ -84,6 +113,8 @@ var populateFutureData = function(weather) {
         fiveDayEl.append(dailyForecastDiv);
     }
 }
+
+loadCities();
 
 formEl.addEventListener('submit', function(event){
     event.preventDefault();
