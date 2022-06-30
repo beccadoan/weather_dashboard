@@ -92,7 +92,7 @@ var getCityData = function(lat, lon) {
             // get source for weather icon
             var todayIconEl = document.querySelector("#c-icon");
             var icon = data.current.weather[0].icon;
-            var source = 'http://openweathermap.org/img/wn/'+icon+'@2x.png';
+            var source = 'https://openweathermap.org/img/wn/'+icon+'@2x.png';
             todayIconEl.setAttribute('src', source);
             // call functions to populate web page with current and future data
             populateCurrentData(data.current);
@@ -130,7 +130,7 @@ var populateFutureData = function(weather) {
         var dateEl = document.createElement('h4');
         dateEl.textContent = moment().add(i+1, 'days').format("L");
         var icon = dailyArray[i].weather[0].icon;
-        var source = 'http://openweathermap.org/img/wn/'+icon+'@2x.png';
+        var source = 'https://openweathermap.org/img/wn/'+icon+'@2x.png';
         var iconEl = document.createElement('img');
         iconEl.classList.add("icon-today")
         iconEl.setAttribute('src', source);
